@@ -1,0 +1,91 @@
+
+
+
+#footy-footer
+{
+	opacity: 1;
+	transition: opacity 800ms ease-in-out;
+	position: fixed;
+  height : 8vh;
+	width: 100%;
+	font-size: 3vh;
+	letter-spacing: 0em;
+	padding-top: 0.5vh;
+}
+
+
+
+/* Bottom position for the Title-Footer footer when both progress bar and TOC-Progress are visible */
+
+div.progress[style="display: block;"] ~ #footy-footer
+{
+	bottom: calc(3px + 10.5vh);
+}
+
+/* Bottom position for the Title-Footer footer when TOC-Progress is visible */
+
+#footy-footer
+{
+	bottom: 10.5vh;
+}
+
+/* This is to fix the positioning of the title which goes off screen due to a new reveal.js CSS property. */
+#footy-footer p{
+  position: relative;
+  font-family: "News Cycle", Impact, sans-serif;
+  color: #fff;
+  display: block;
+	text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  top: -80%;
+  width: 85%;
+}
+#footy-logo {
+	opacity: 1;
+	transition: opacity 800ms ease-in-out;
+  position: relative;
+  top: 10%;
+  display: inline;
+  margin-left: 20px;
+  width: 60px;
+  height: 55px;
+  vertical-align: middle;
+  z-index:50;
+}
+
+/* Bottom position for the Title-Footer footer when progress bar is visible */
+
+div.progress[style="display: block;"] ~ footer:last-of-type#footy-footer
+{
+	bottom: 3px;
+}
+
+/* Bottom position for the Title-Footer footer when neither progress bar nor TOC-Progress are visible */
+
+footer:last-of-type#footy-footer
+{
+	bottom: 0px;
+}
+
+/* Make Title-Footer invisible if explicitly indicated */
+
+.no-title-footer #footy-footer
+{
+	opacity: 0;
+	transition: opacity 800ms ease-in-out;
+}
+
+.no-toc-progress #footy-footer
+{
+	opacity: 0;
+	transition: opacity 800ms ease-in-out;
+}
+
+/* Make Title-Footer invisible in overview mode */
+
+.overview #footy-footer
+{
+	opacity: 0;
+	transition: opacity 800ms ease-in-out;
+}
